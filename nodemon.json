@@ -1,0 +1,10 @@
+{
+  "watch": [
+    "./**/*.*s",
+    ".env"
+  ],
+  "ext": "js,ts,json",
+  "ignore": [
+    "src/**/*.spec.ts"
+  ]
+}

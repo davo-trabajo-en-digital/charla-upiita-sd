@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  db:
+    image: "mongo:latest"
+    networks:
+      - default
+    ports:
+      - "27017:27017"
+  competencias:
+    build: .
+    volumes:
+      - .:
+    environment:
+      NODE_ENV: production
+      RUTA: competencias
+    networks:
+      - default
+    depends_on:
+      - "db"

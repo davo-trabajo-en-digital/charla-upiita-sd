@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  db:
+    image: "mongo:latest"
+    networks:
+      - default
+  competencias:
+    build: .
+    volumes:
+      - "./:/usr/src/app"
+    networks:
+      - default
+    depends_on:
+      - "db"
+    ports:
+      - "3000:3000"
+    command:
+      - npm
+      - run
+      - start
+    stdin_open: true
+    tty: true
